@@ -12,7 +12,7 @@ const Header = () => {
           <div className="w-8 h-5 bg-red-600 rounded-lg flex items-center justify-center relative">
             <div className="w-0 h-0 border-t-[3px] border-t-transparent border-l-[6px] border-l-white border-b-[3px] border-b-transparent ml-0.5"></div>
           </div>
-          <span className="text-xl font-bold tracking-tighter font-sans relative bottom-px">
+          <span className="text-xl font-bold tracking-tighter font-sans relative bottom-px text-gray-900">
             YouTube
           </span>
         </div>
