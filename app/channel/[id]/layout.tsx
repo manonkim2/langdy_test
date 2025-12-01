@@ -1,6 +1,6 @@
 import React from "react";
-import Header from "@/components/common/Header";
-import Sidebar from "@/components/common/Sidebar";
+import Header from "@/components/layout/Header";
+import Sidebar from "@/components/layout/Sidebar";
 
 const ChannelLayout = ({ children }: { children: React.ReactNode }) => {
   return (

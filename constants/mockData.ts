@@ -1,7 +1,7 @@
-import { Channel, Video } from "@/types";
+import { IChannel, IVideo } from "@/types";
 
 // 채널 목업 데이터
-export const MOCK_CHANNEL: Channel = {
+export const MOCK_CHANNEL: IChannel = {
   id: "알려줘랭짱",
   name: "알려줘랭짱",
   handle: "@langzzang",
@@ -13,7 +13,7 @@ export const MOCK_CHANNEL: Channel = {
 };
 
 // 비디오 목업 데이터
-export const MOCK_VIDEOS: Video[] = [
+export const MOCK_VIDEOS: IVideo[] = [
   {
     id: "v1",
     title: "잘때 틀어만 두세요 | 일본인 발음 연속듣기",

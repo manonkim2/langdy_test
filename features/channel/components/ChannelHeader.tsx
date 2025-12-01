@@ -1,24 +1,32 @@
+import Image from "next/image";
 import { CheckCircle, Bell } from "lucide-react";
-import { Channel } from "@/types";
+
+import { IChannel } from "@/types";
 
 interface ChannelHeaderProps {
-  channel: Channel;
+  channel: IChannel;
 }
 
 const ChannelHeader = ({ channel }: ChannelHeaderProps) => {
   return (
     <div className="flex flex-col w-full">
       {/* 1. 채널 배너 */}
-      <div
-        className={`w-full h-32 md:h-52 rounded-xl ${channel.bannerUrl} mb-6`}
-      />
+      <div className="relative w-full h-32 md:h-52 rounded-xl overflow-hidden mb-6 bg-gray-100">
+        <Image
+          src={`/${channel.bannerUrl}`}
+          objectFit="object-cover"
+          alt="channel-image"
+          fill
+          className="rounded-xl"
+        />
+      </div>
 
       {/* 2. 채널 정보 섹션 */}
       <div className="flex flex-col md:flex-row px-4 md:px-12 gap-6 mb-6">
         {/* 프사 */}
-        <div
-          className={`w-32 h-32 md:w-40 md:h-40 rounded-full ${channel.avatarUrl} border-4 border-white -mt-20 md:mt-0 shrink-0 shadow-lg`}
-        />
+        <div className="w-32 h-32 md:w-40 md:h-40 rounded-full border-white overflow-hidden relative">
+          <Image src={`/${channel.avatarUrl}`} alt="channel-avatar" fill />
+        </div>
 
         {/* 텍스트 정보 */}
         <div className="flex flex-col justify-center flex-1 gap-2">
@@ -55,14 +63,14 @@ const ChannelHeader = ({ channel }: ChannelHeaderProps) => {
         </div>
       </div>
 
-      {/* 3. 탭 메뉴 (Sticky) */}
+      {/* 3. 탭 메뉴  */}
       <div className="flex gap-1 border-b border-gray-200 px-4 md:px-12 overflow-x-auto sticky top-14 bg-white z-30 scrollbar-hide">
         {channel.tabs.map((tab) => (
           <button
             key={tab}
             className={`px-6 py-3 text-sm font-semibold whitespace-nowrap border-b-[3px] transition-colors
               ${
-                tab === "Videos"
+                tab === "동영상"
                   ? "border-gray-900 text-gray-900"
                   : "border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-300"
               }`}

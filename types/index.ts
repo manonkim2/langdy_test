@@ -1,4 +1,4 @@
-export interface Channel {
+export interface IChannel {
   id: string;
   name: string;
   handle: string;
@@ -9,7 +9,7 @@ export interface Channel {
   tabs: string[];
 }
 
-export interface Video {
+export interface IVideo {
   id: string;
   title: string;
   thumbnailUrl: string;
@@ -19,6 +19,6 @@ export interface Video {
 }
 
 export interface ChannelResponse {
-  channel: Channel;
-  videos: Video[];
+  channel: IChannel;
+  videos: IVideo[];
 }
